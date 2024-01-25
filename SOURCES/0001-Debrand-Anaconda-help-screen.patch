@@ -1,0 +1,831 @@
+From e44ed51b04094958a26dc33852bcbf54919e3b30 Mon Sep 17 00:00:00 2001
+From: Louis Abel <label@rockylinux.org>
+Date: Mon, 20 Feb 2023 15:47:39 -0700
+Subject: [PATCH] adjust patches
+
+---
+ {rhel => openela}/anaconda-help-anchors.json    |   0
+ {rhel => openela}/en-US/anaconda-help.xml       | 472 +++---------------
+ .../en-US/rhel_help_placeholder.txt           |   2 +-
+ .../en-US/rhel_help_placeholder.xml           |   2 +-
+ 4 files changed, 60 insertions(+), 416 deletions(-)
+ rename {rhel => openela}/anaconda-help-anchors.json (100%)
+ rename {rhel => openela}/en-US/anaconda-help.xml (79%)
+ rename {rhel => openela}/en-US/rhel_help_placeholder.txt (78%)
+ rename {rhel => openela}/en-US/rhel_help_placeholder.xml (58%)
+
+diff --git a/rhel/anaconda-help-anchors.json b/openela/anaconda-help-anchors.json
+similarity index 100%
+rename from rhel/anaconda-help-anchors.json
+rename to openela/anaconda-help-anchors.json
+diff --git a/rhel/en-US/anaconda-help.xml b/openela/en-US/anaconda-help.xml
+similarity index 79%
+rename from rhel/en-US/anaconda-help.xml
+rename to openela/en-US/anaconda-help.xml
+index 19e5a5d..7902b00 100644
+--- a/rhel/en-US/anaconda-help.xml
++++ b/openela/en-US/anaconda-help.xml
+@@ -2,11 +2,11 @@
+ <info>
+ <title>Customizing your installation</title>
+ <date>2023-01-24</date>
+-<orgname>Red&#160;Hat</orgname>
++<orgname>OpenELA&#160;Linux</orgname>
+ </info>
+ <preface>
+ <title/>
+-<simpara role="_abstract">When installing Red&#160;Hat Enterprise&#160;Linux, you can customize location, software, and system settings and parameters, using the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
++<simpara role="_abstract">When installing OpenELA&#160;Linux, you can customize location, software, and system settings and parameters, using the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
+ <simpara>The <emphasis role="strong">Installation Summary</emphasis> window contains the following categories:</simpara>
+ <variablelist>
+ <varlistentry>
+@@ -18,7 +18,7 @@
+ <varlistentry>
+ <term>SOFTWARE</term>
+ <listitem>
+-<simpara>You can configure Connect to Red Hat, Installation Source, and Software Selection.</simpara>
++<simpara>You can configure Connect to OpenELA, Installation Source, and Software Selection.</simpara>
+ </listitem>
+ </varlistentry>
+ <varlistentry>
+@@ -49,7 +49,7 @@
+ <tbody>
+ <row>
+ <entry align="left" valign="top"><simpara>Yellow triangle with an exclamation mark and red text</simpara></entry>
+-<entry align="left" valign="top"><simpara>Requires attention before installation. For example, Network &amp; Host Name requires attention before you can register and download from the Content Delivery Network (CDN).</simpara></entry>
++<entry align="left" valign="top"><simpara>Requires attention before installation. For example, Network &amp; Host Name requires attention before you can register and download from a Content Delivery Network (CDN) like a Katello/Foreman instance.</simpara></entry>
+ </row>
+ <row>
+ <entry align="left" valign="top"><simpara>Grayed out and with a warning symbol (yellow triangle with an exclamation mark)</simpara></entry>
+@@ -61,7 +61,7 @@
+ <note>
+ <simpara>A warning message is displayed at the bottom of the <emphasis role="strong">Installation Summary</emphasis> window and the <emphasis role="strong">Begin Installation</emphasis> button is disabled until you configure all of the required categories.</simpara>
+ </note>
+-<simpara>This section contains information about customizing your Red&#160;Hat Enterprise&#160;Linux installation using the Graphical User Interface (GUI). The GUI is the preferred method of installing Red&#160;Hat Enterprise&#160;Linux when you boot the system from a CD, DVD, or USB flash drive, or from a network using PXE.</simpara>
++<simpara>This section contains information about customizing your OpenELA&#160;Linux installation using the Graphical User Interface (GUI). The GUI is the preferred method of installing OpenELA&#160;Linux when you boot the system from a CD, DVD, or USB flash drive, or from a network using PXE.</simpara>
+ <note>
+ <simpara>There may be some variance between the online help and the content that is published on the Customer Portal. For the latest updates, see the installation content on the Customer Portal.</simpara>
+ </note>
+@@ -84,19 +84,19 @@
+ <orderedlist numeration="arabic">
+ <title>Procedure</title>
+ <listitem>
+-<simpara>From the left-hand pane of the <emphasis role="strong">Welcome to Red Hat Enterprise Linux</emphasis> window, select a language. Alternatively, type your preferred language into the <emphasis role="strong">Search</emphasis> field.</simpara>
++<simpara>From the left-hand pane of the <emphasis role="strong">Welcome to OpenELA</emphasis> window, select a language. Alternatively, type your preferred language into the <emphasis role="strong">Search</emphasis> field.</simpara>
+ <note>
+ <simpara>A language is pre-selected by default. If network access is configured, that is, if you booted from a network server instead of local media, the pre-selected language is determined by the automatic location detection feature of the <emphasis role="strong">GeoIP</emphasis> module. If you used the <literal role="option">inst.lang=</literal> option on the boot command line or in your PXE server configuration, then the language that you define with the boot option is selected.</simpara>
+ </note>
+ </listitem>
+ <listitem>
+-<simpara>From the right-hand pane of the <emphasis role="strong">Welcome to Red Hat Enterprise Linux</emphasis> window, select a location specific to your region.</simpara>
++<simpara>From the right-hand pane of the <emphasis role="strong">Welcome to OpenELA</emphasis> window, select a location specific to your region.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>Click <guibutton>Continue</guibutton> to proceed to the <link linkend="graphical-installation_graphical-installation">Graphical installations</link> window.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>If you are installing a pre-release version of Red&#160;Hat Enterprise&#160;Linux, a warning message is displayed about the pre-release status of the installation media.</simpara>
++<simpara>If you are installing a pre-release version of OpenELA&#160;Linux, a warning message is displayed about the pre-release status of the installation media.</simpara>
+ <orderedlist numeration="loweralpha">
+ <listitem>
+ <simpara>To continue with the installation, click <guibutton>I want to proceed</guibutton>, or</simpara>
+@@ -122,7 +122,7 @@
+ </important>
+ <note>
+ <title>Configuring keyboard, language, and time and date settings</title>
+-<simpara>Keyboard, Language, and Time and Date Settings are configured by default as part of <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#installing-rhel-using-anaconda_graphical-installation">Installing RHEL using Anaconda</link>.
++<simpara>Keyboard, Language, and Time and Date Settings are configured by default as part of <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#installing-rhel-using-anaconda_graphical-installation">Installing OpenELA using Anaconda</link>.
+ To change any of the settings, complete the following steps, otherwise proceed to <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#configuring-software-settings_graphical-installation">Configuring software settings</link>.</simpara>
+ </note>
+ <orderedlist numeration="arabic">
+@@ -131,7 +131,7 @@ To change any of the settings, complete the following steps, otherwise proceed t
+ <simpara>Configure keyboard settings:</simpara>
+ <orderedlist numeration="loweralpha">
+ <listitem>
+-<simpara>From the <emphasis role="strong">Installation Summary</emphasis> window, click <emphasis role="strong">Keyboard</emphasis>. The default layout depends on the option selected in <link linkend="installing-rhel-using-anaconda_graphical-installation">Installing RHEL using Anaconda</link>.</simpara>
++<simpara>From the <emphasis role="strong">Installation Summary</emphasis> window, click <emphasis role="strong">Keyboard</emphasis>. The default layout depends on the option selected in <link linkend="installing-rhel-using-anaconda_graphical-installation">Installing OpenELA using Anaconda</link>.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>Click <guibutton>+</guibutton> to open the <emphasis role="strong">Add a Keyboard Layout</emphasis> window and change to a different layout.</simpara>
+@@ -176,8 +176,8 @@ To change any of the settings, complete the following steps, otherwise proceed t
+ <listitem>
+ <simpara>From the <emphasis role="strong">Installation Summary</emphasis> window, click <emphasis role="strong">Time &amp; Date</emphasis>. The <emphasis role="strong">Time &amp; Date</emphasis> window opens.</simpara>
+ <note>
+-<simpara>The <emphasis role="strong">Time &amp; Date</emphasis> settings are configured by default based on the settings you selected in <link linkend="installing-rhel-using-anaconda_graphical-installation">Installing RHEL using Anaconda</link>.</simpara>
+-<simpara>The list of cities and regions come from the Time Zone Database (<literal role="package">tzdata</literal>) public domain that is maintained by the Internet Assigned Numbers Authority (IANA). Red&#160;Hat can not add cities or regions to this database. You can find more information at the <link xl:href="http://www.iana.org/time-zones">IANA official website</link>.</simpara>
++<simpara>The <emphasis role="strong">Time &amp; Date</emphasis> settings are configured by default based on the settings you selected in <link linkend="installing-rhel-using-anaconda_graphical-installation">Installing OpenELA using Anaconda</link>.</simpara>
++<simpara>The list of cities and regions come from the Time Zone Database (<literal role="package">tzdata</literal>) public domain that is maintained by the Internet Assigned Numbers Authority (IANA). OpenELA&#160;Linux can not add cities or regions to this database. You can find more information at the <link xl:href="http://www.iana.org/time-zones">IANA official website</link>.</simpara>
+ </note>
+ </listitem>
+ <listitem>
+@@ -210,9 +210,9 @@ To change any of the settings, complete the following steps, otherwise proceed t
+ <simpara>This section contains information about configuring Installation Destination, KDUMP, Network and Host Name, and Security Policy.</simpara>
+ <section xml:id="configuring-system-settings_configuring-system-settings">
+ <title>Configuring installation destination</title>
+-<simpara role="_abstract">Use the <emphasis role="strong">Installation Destination</emphasis> window to configure the storage options, for example, the disks that you want to use as the installation target for your Red&#160;Hat Enterprise&#160;Linux installation. You must select at least one disk.</simpara>
++<simpara role="_abstract">Use the <emphasis role="strong">Installation Destination</emphasis> window to configure the storage options, for example, the disks that you want to use as the installation target for your OpenELA&#160;Linux installation. You must select at least one disk.</simpara>
+ <warning>
+-<simpara>Back up your data if you plan to use a disk that already contains data. For example, if you want to shrink an existing Microsoft Windows partition and install Red&#160;Hat Enterprise&#160;Linux as a second system, or if you are upgrading a previous release of Red&#160;Hat Enterprise&#160;Linux. Manipulating partitions always carries a risk. For example, if the process is interrupted or fails for any reason data on the disk can be lost.</simpara>
++<simpara>Back up your data if you plan to use a disk that already contains data. For example, if you want to shrink an existing Microsoft Windows partition and install OpenELA&#160;Linux as a second system, or if you are upgrading a previous release of OpenELA&#160;Linux. Manipulating partitions always carries a risk. For example, if the process is interrupted or fails for any reason data on the disk can be lost.</simpara>
+ </warning>
+ <important>
+ <itemizedlist>
+@@ -222,10 +222,10 @@ To change any of the settings, complete the following steps, otherwise proceed t
+ If you choose to partition your system automatically, you should manually edit your <literal>/boot</literal> partition.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>To configure the Red&#160;Hat Enterprise&#160;Linux boot loader to <emphasis>chain load</emphasis> from a different boot loader, you must specify the boot drive manually by clicking the <emphasis role="strong">Full disk summary and bootloader</emphasis> link from the <emphasis role="strong">Installation Destination</emphasis> window.</simpara>
++<simpara>To configure the OpenELA&#160;Linux boot loader to <emphasis>chain load</emphasis> from a different boot loader, you must specify the boot drive manually by clicking the <emphasis role="strong">Full disk summary and bootloader</emphasis> link from the <emphasis role="strong">Installation Destination</emphasis> window.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>When you install Red&#160;Hat Enterprise&#160;Linux on a system with both multipath and non-multipath storage devices, the automatic partitioning layout in the installation program creates volume groups that contain a mix of multipath and non-multipath devices. This defeats the purpose of multipath storage. It is recommended that you select either multipath or non-multipath devices on the <emphasis role="strong">Installation Destination</emphasis> window. Alternatively, proceed to manual partitioning.</simpara>
++<simpara>When you install OpenELA&#160;Linux on a system with both multipath and non-multipath storage devices, the automatic partitioning layout in the installation program creates volume groups that contain a mix of multipath and non-multipath devices. This defeats the purpose of multipath storage. It is recommended that you select either multipath or non-multipath devices on the <emphasis role="strong">Installation Destination</emphasis> window. Alternatively, proceed to manual partitioning.</simpara>
+ </listitem>
+ </itemizedlist>
+ </important>
+@@ -241,7 +241,7 @@ If you choose to partition your system automatically, you should manually edit y
+ <listitem>
+ <simpara>From the <emphasis role="strong">Local Standard Disks</emphasis> section, select the storage device that you require; a white check mark indicates your selection. Disks without a white check mark are not used during the installation process; they are ignored if you choose automatic partitioning, and they are not available in manual partitioning.</simpara>
+ <note>
+-<simpara>All locally available storage devices (SATA, IDE and SCSI hard drives, USB flash and external disks) are displayed under <emphasis role="strong">Local Standard Disks</emphasis>. Any storage devices connected after the installation program has started are not detected. If you use a removable drive to install Red&#160;Hat Enterprise&#160;Linux, your system is unusable if you remove the device.</simpara>
++<simpara>All locally available storage devices (SATA, IDE and SCSI hard drives, USB flash and external disks) are displayed under <emphasis role="strong">Local Standard Disks</emphasis>. Any storage devices connected after the installation program has started are not detected. If you use a removable drive to install OpenELA&#160;Linux, your system is unusable if you remove the device.</simpara>
+ </note>
+ </listitem>
+ <listitem>
+@@ -272,7 +272,7 @@ If you choose to partition your system automatically, you should manually edit y
+ </important>
+ </listitem>
+ <listitem>
+-<simpara>Optional: To reclaim space from an existing partitioning layout, select the <emphasis role="strong">I would like to make additional space available</emphasis> check box. For example, if a disk you want to use already contains a different operating system and you want to make this system&#8217;s partitions smaller to allow more room for Red&#160;Hat Enterprise&#160;Linux.</simpara>
++<simpara>Optional: To reclaim space from an existing partitioning layout, select the <emphasis role="strong">I would like to make additional space available</emphasis> check box. For example, if a disk you want to use already contains a different operating system and you want to make this system&#8217;s partitions smaller to allow more room for OpenELA&#160;Linux.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>Optional: Select <emphasis role="strong">Encrypt my data</emphasis> to encrypt all partitions except the ones needed to boot the system (such as <literal>/boot</literal>) using <emphasis>Linux Unified Key Setup</emphasis> (LUKS). Encrypting your hard drive is recommended.</simpara>
+@@ -286,7 +286,7 @@ If you choose to partition your system automatically, you should manually edit y
+ <listitem>
+ <simpara>Click <guibutton>Save Passphrase</guibutton> to complete disk encryption.</simpara>
+ <warning>
+-<simpara>If you lose the LUKS passphrase, any encrypted partitions and their data is completely inaccessible. There is no way to recover a lost passphrase. However, if you perform a Kickstart installation, you can save encryption passphrases and create backup encryption passphrases during the installation. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced RHEL 8 installation</emphasis></link> document for information.</simpara>
++<simpara>If you lose the LUKS passphrase, any encrypted partitions and their data is completely inaccessible. There is no way to recover a lost passphrase. However, if you perform a Kickstart installation, you can save encryption passphrases and create backup encryption passphrases during the installation. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced OpenELA 8 installation</emphasis></link> document for information.</simpara>
+ </warning>
+ </listitem>
+ </orderedlist>
+@@ -304,7 +304,7 @@ If you choose to partition your system automatically, you should manually edit y
+ <simpara>Click <guibutton>Done</guibutton>.</simpara>
+ <orderedlist numeration="loweralpha">
+ <listitem>
+-<simpara>If you selected <emphasis role="strong">automatic partitioning</emphasis> and <emphasis role="strong">I would like to make additional space available</emphasis>, or if there is not enough free space on your selected hard drives to install Red&#160;Hat Enterprise&#160;Linux, the <emphasis role="strong">Reclaim Disk Space</emphasis> dialog box opens when you click <guibutton>Done</guibutton>, and lists all configured disk devices and all partitions on those devices. The dialog box displays information about how much space the system needs for a minimal installation and how much space you have reclaimed.</simpara>
++<simpara>If you selected <emphasis role="strong">automatic partitioning</emphasis> and <emphasis role="strong">I would like to make additional space available</emphasis>, or if there is not enough free space on your selected hard drives to install OpenELA&#160;Linux, the <emphasis role="strong">Reclaim Disk Space</emphasis> dialog box opens when you click <guibutton>Done</guibutton>, and lists all configured disk devices and all partitions on those devices. The dialog box displays information about how much space the system needs for a minimal installation and how much space you have reclaimed.</simpara>
+ <warning>
+ <simpara>If you <emphasis role="strong">delete</emphasis> a partition, all data on that partition is lost. If you want to preserve your data, use the <emphasis role="strong">Shrink</emphasis> option, not the <emphasis role="strong">Delete</emphasis> option.</simpara>
+ </warning>
+@@ -315,7 +315,7 @@ If you choose to partition your system automatically, you should manually edit y
+ <listitem>
+ <simpara>To reclaim space, select a disk or partition, and click either the <guibutton>Delete</guibutton> button to delete that partition, or all partitions on a selected disk, or click <guibutton>Shrink</guibutton> to use free space on a partition while preserving the existing data.</simpara>
+ <note>
+-<simpara>Alternatively, you can click <guibutton>Delete all</guibutton>, this deletes all existing partitions on all disks and makes this space available to Red&#160;Hat Enterprise&#160;Linux. Existing data on all disks is lost.</simpara>
++<simpara>Alternatively, you can click <guibutton>Delete all</guibutton>, this deletes all existing partitions on all disks and makes this space available to OpenELA&#160;Linux. Existing data on all disks is lost.</simpara>
+ </note>
+ </listitem>
+ <listitem>
+@@ -336,13 +336,13 @@ If you choose to partition your system automatically, you should manually edit y
+ </section>
+ <section xml:id="boot-loader-installation_configuring-system-settings">
+ <title>Configuring boot loader</title>
+-<simpara role="_abstract">Red&#160;Hat Enterprise&#160;Linux uses GRand Unified Bootloader version 2 (<emphasis role="strong"><phrase role="application">GRUB2</phrase></emphasis>) as the boot loader for AMD64 and Intel 64, IBM Power Systems, and ARM. For 64-bit IBM&#160;Z, the <emphasis role="strong">zipl</emphasis> boot loader is used.</simpara>
++<simpara role="_abstract">OpenELA&#160;Linux uses GRand Unified Bootloader version 2 (<emphasis role="strong"><phrase role="application">GRUB2</phrase></emphasis>) as the boot loader for AMD64 and Intel 64, IBM Power Systems, and ARM. For 64-bit IBM&#160;Z, the <emphasis role="strong">zipl</emphasis> boot loader is used.</simpara>
+ <simpara>The boot loader is the first program that runs when the system starts and is responsible for loading and transferring control to an operating system. <emphasis role="strong"><phrase role="application">GRUB2</phrase></emphasis> can boot any compatible operating system (including Microsoft Windows) and can also use chain loading to transfer control to other boot loaders for unsupported operating systems.</simpara>
+ <warning>
+ <simpara>Installing <emphasis role="strong"><phrase role="application">GRUB2</phrase></emphasis> may overwrite your existing boot loader.</simpara>
+ </warning>
+-<simpara>If an operating system is already installed, the Red&#160;Hat Enterprise&#160;Linux installation program attempts to automatically detect and configure the boot loader to start the other operating system. If the boot loader is not detected, you can manually configure any additional operating systems after you finish the installation.</simpara>
+-<simpara>If you are installing a Red&#160;Hat Enterprise&#160;Linux system with more than one disk, you might want to manually specify the disk where you want to install the boot loader.</simpara>
++<simpara>If an operating system is already installed, the OpenELA&#160;Linux installation program attempts to automatically detect and configure the boot loader to start the other operating system. If the boot loader is not detected, you can manually configure any additional operating systems after you finish the installation.</simpara>
++<simpara>If you are installing a OpenELA&#160;Linux system with more than one disk, you might want to manually specify the disk where you want to install the boot loader.</simpara>
+ <orderedlist numeration="arabic">
+ <title>Procedure</title>
+ <listitem>
+@@ -435,7 +435,7 @@ If you choose to partition your system automatically, you should manually edit y
+ <simpara>The host name can either be a fully qualified domain name (FQDN) in the format <literal><emphasis>hostname.domainname</emphasis></literal>, or a short host name without the domain. Many networks have a Dynamic Host Configuration Protocol (DHCP) service that automatically supplies connected systems with a domain name. To allow the DHCP service to assign the domain name to this system, specify only the short host name.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>When using static IP and host name configuration, it depends on the planned system use case whether to use a short name or FQDN. Red&#160;Hat Identity Management configures FQDN during provisioning but some 3rd party software products may require short name. In either case, to ensure availability of both forms in all situations, add an entry for the host in <literal>/etc/hosts`</literal> in the format <literal>IP FQDN short-alias</literal>.</simpara>
++<simpara>When using static IP and host name configuration, it depends on the planned system use case whether to use a short name or FQDN. OpenELA&#160;Linux Identity Management configures FQDN during provisioning but some 3rd party software products may require short name. In either case, to ensure availability of both forms in all situations, add an entry for the host in <literal>/etc/hosts`</literal> in the format <literal>IP FQDN short-alias</literal>.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>The value <literal>localhost</literal> means that no specific static host name for the target system is configured, and the actual host name of the installed system is configured during the processing of the network configuration, for example, by NetworkManager using DHCP or DNS.</simpara>
+@@ -604,365 +604,12 @@ If you choose to partition your system automatically, you should manually edit y
+ </itemizedlist>
+ </section>
+ </section>
+-<section xml:id="connect-to-red-hat_configuring-system-settings">
+-<title>Configuring Connect to Red Hat</title>
+-<simpara>The Red Hat Content Delivery Network (CDN), available from cdn.redhat.com, is a geographically distributed series of static web servers that contain content and errata that is consumed by systems. The content can be consumed directly, such as using a system registered to Red Hat Subscription Management. The CDN is protected by x.509 certificate authentication to ensure that only valid users have access. When a system is registered to Red Hat Subscription Management, the attached subscriptions govern which subset of the CDN the system can access.</simpara>
+-<simpara>Registering and installing RHEL from the CDN provides the following benefits:</simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>The CDN installation method supports the Boot ISO and the DVD ISO image files. However, the use of the smaller Boot ISO image file is recommended as it consumes less space than the larger DVD ISO image file.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>The CDN uses the latest packages resulting in a fully up-to-date system right after installation. There is no requirement to install package updates immediately after installation as is often the case when using the DVD ISO image file.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Integrated support for connecting to Red Hat Insights and enabling System Purpose.</simpara>
+-</listitem>
+-</itemizedlist>
+-<section xml:id="system_purposes-adoc_connect-to-red-hat">
+-<title>Introduction to System Purpose</title>
+-<simpara role="_abstract">System Purpose is an optional but recommended feature of the Red&#160;Hat Enterprise&#160;Linux installation. You use System Purpose to record the intended use of a Red&#160;Hat Enterprise&#160;Linux 8 system, and ensure that the entitlement server auto-attaches the most appropriate subscription to your system.</simpara>
+-<simpara>Benefits include:</simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>In-depth system-level information for system administrators and business operations.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Reduced overhead when determining why a system was procured and its intended purpose.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Improved customer experience of Subscription Manager auto-attach as well as automated discovery and reconciliation of system usage.</simpara>
+-</listitem>
+-</itemizedlist>
+-<simpara>You can enter System Purpose data in one of the following ways:</simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>During image creation</simpara>
+-</listitem>
+-<listitem>
+-<simpara>During a GUI installation when using the <emphasis role="strong">Connect to Red Hat</emphasis> screen to register your system and attach your Red Hat subscription</simpara>
+-</listitem>
+-<listitem>
+-<simpara>During a Kickstart installation when using Kickstart automation scripts</simpara>
+-</listitem>
+-<listitem>
+-<simpara>After installation using the <literal>subscription-manager syspurpose</literal> command-line (CLI) tool</simpara>
+-</listitem>
+-</itemizedlist>
+-<simpara>To record the intended purpose of your system, you can configure the following components of System Purpose. The selected values are used by the entitlement server upon registration to attach the most suitable subscription for your system.</simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara><emphasis role="strong">Role</emphasis></simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>Red Hat Enterprise Linux Server</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Red Hat Enterprise Linux Workstation</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Red Hat Enterprise Linux Compute Node</simpara>
+-</listitem>
+-</itemizedlist>
+-</listitem>
+-<listitem>
+-<simpara><emphasis role="strong">Service Level Agreement</emphasis></simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>Premium</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Standard</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Self-Support</simpara>
+-</listitem>
+-</itemizedlist>
+-</listitem>
+-<listitem>
+-<simpara><emphasis role="strong">Usage</emphasis></simpara>
+-<itemizedlist>
+-<listitem>
+-<simpara>Production</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Development/Test</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Disaster Recovery</simpara>
+-</listitem>
+-</itemizedlist>
+-</listitem>
+-</itemizedlist>
+-<itemizedlist role="_additional-resources">
+-<title>Additional resources</title>
+-<listitem>
+-<simpara><link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/composing_a_customized_rhel_system_image/index/">Composing a customized RHEL system image</link></simpara>
+-</listitem>
+-<listitem>
+-<simpara><link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/">Performing an advanced RHEL 8 installation</link></simpara>
+-</listitem>
+-<listitem>
+-<simpara><link xl:href="https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html-single/rhsm/index/">Using and Configuring Red Hat Subscription Manager</link></simpara>
+-</listitem>
+-</itemizedlist>
+-</section>
+-<section xml:id="configuring-connect-to-redhat_connect-to-red-hat">
+-<title>Configuring Connect to Red Hat options</title>
+-<simpara role="_abstract">Use the following procedure to configure the Connect to Red Hat options in the GUI.</simpara>
+-<note>
+-<simpara>You can register to the CDN using either your Red Hat account or your activation key details.</simpara>
+-</note>
+-<orderedlist numeration="arabic">
+-<title>Procedure</title>
+-<listitem>
+-<simpara>Click <emphasis role="strong">Account</emphasis>.</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>Enter your Red Hat Customer Portal username and password details.</simpara>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-<listitem>
+-<simpara>Optional: Click <emphasis role="strong">Activation Key</emphasis>.</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>Enter your organization ID and activation key. You can enter more than one activation key, separated by a comma, as long as the activation keys are registered to your subscription.</simpara>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-<listitem>
+-<simpara>Select the <emphasis role="strong">Set System Purpose</emphasis> check box. System Purpose enables the entitlement server to determine and automatically attach the most appropriate subscription to satisfy the intended use of Red&#160;Hat Enterprise&#160;Linux 8 system.</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>Select the required <emphasis role="strong">Role</emphasis>, <emphasis role="strong">SLA</emphasis>, and <emphasis role="strong">Usage</emphasis> from the corresponding drop-down lists.</simpara>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-<listitem>
+-<simpara>The <emphasis role="strong">Connect to Red Hat Insights</emphasis> check box is enabled by default. Clear the check box if you do not want to connect to Red Hat Insights.</simpara>
+-<note>
+-<simpara>Red Hat Insights is a Software-as-a-Service (SaaS) offering that provides continuous, in-depth analysis of registered Red Hat-based systems to proactively identify threats to security, performance and stability across physical, virtual and cloud environments, and container deployments.</simpara>
+-</note>
+-</listitem>
+-<listitem>
+-<simpara>Optional: Expand <emphasis role="strong">Options</emphasis>.</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>Select the <emphasis role="strong">Use HTTP proxy</emphasis> check box if your network environment only allows external Internet access or access to content servers through an HTTP proxy. Clear the <emphasis role="strong">Use HTTP proxy</emphasis> check box if an HTTP proxy is not used.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>If you are running Satellite Server or performing internal testing, select the <emphasis role="strong">Custom Server URL</emphasis> and  <emphasis role="strong">Custom base URL</emphasis> check boxes and enter the required details.</simpara>
+-<important>
+-<itemizedlist>
+-<listitem>
+-<simpara>The <emphasis role="strong">Custom Server URL</emphasis> field does not require the HTTP protocol, for example <literal>nameofhost.com</literal>. However, the <emphasis role="strong">Custom base URL</emphasis> field requires the HTTP protocol.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>To change the <emphasis role="strong">Custom base URL</emphasis> after registration, you must unregister, provide the new details, and then re-register.</simpara>
+-</listitem>
+-</itemizedlist>
+-</important>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-<listitem>
+-<simpara>Click <guibutton>Register</guibutton> to register the system. When the system is successfully registered and subscriptions are attached, the <emphasis role="strong">Connect to Red Hat</emphasis> window displays the attached subscription details.</simpara>
+-<note>
+-<simpara>Depending on the amount of subscriptions, the registration and attachment process might take up to a minute to complete.</simpara>
+-</note>
+-</listitem>
+-<listitem>
+-<simpara>Click <guibutton>Done</guibutton> to return to the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>A <emphasis>Registered</emphasis> message is displayed under <emphasis role="strong">Connect to Red Hat</emphasis>.</simpara>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-</orderedlist>
+-</section>
+-<section xml:id="how-the-default-installation-repo-works-in-cdn_connect-to-red-hat">
+-<title>Installation source repository after system registration</title>
+-<simpara role="_abstract">The installation source repository used after system registration is dependent on how the system was booted.</simpara>
+-<variablelist>
+-<varlistentry>
+-<term>System booted from the Boot ISO or the DVD ISO image file</term>
+-<listitem>
+-<simpara>If you booted the RHEL installation using either the <literal>Boot ISO</literal> or the <literal>DVD ISO</literal> image file with the default boot parameters, the installation program automatically switches the installation source repository to the CDN after registration.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>System booted with the <literal>inst.repo=&lt;URL&gt;</literal> boot parameter</term>
+-<listitem>
+-<simpara>If you booted the RHEL installation with the <literal>inst.repo=&lt;URL&gt;</literal> boot parameter, the installation program does not automatically switch the installation source repository to the CDN after registration. If you want to use the CDN to install RHEL, you must manually switch the installation source repository to the CDN by selecting the <emphasis role="strong">Red Hat CDN</emphasis> option in the <emphasis role="strong">Installation Source</emphasis> window of the graphical installation. If you do not manually switch to the CDN, the installation program installs the packages from the repository specified on the kernel command line.</simpara>
+-</listitem>
+-</varlistentry>
+-</variablelist>
+-<important>
+-<itemizedlist>
+-<listitem>
+-<simpara>You can switch the installation source repository to the CDN using the <literal>rhsm</literal> Kickstart command only if you do not specify an installation source using <literal>inst.repo=</literal> on the kernel command line or the <literal>url</literal> command in the Kickstart file. You must use <literal>inst.stage2=&lt;URL&gt;</literal> on the kernel command line to fetch the installation image, but not specify the installation source.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>An installation source URL specified using a boot option or included in a Kickstart file takes precedence over the CDN, even if the Kickstart file contains the <literal>rhsm</literal> command with valid credentials.  The system is registered, but it is installed from the URL installation source. This ensures that earlier installation processes operate as normal.</simpara>
+-</listitem>
+-</itemizedlist>
+-</important>
+-</section>
+-<section xml:id="verifying-registration-from-cdn-using-gui_connect-to-red-hat">
+-<title>Verifying your system registration from the CDN</title>
+-<simpara role="_abstract">Use this procedure to verify that your system is registered to the CDN using the GUI.</simpara>
+-<warning>
+-<simpara>You can only verify your registration from the CDN if you have <emphasis role="strong">not</emphasis> clicked the <emphasis role="strong">Begin Installation</emphasis> button from the <emphasis role="strong">Installation Summary</emphasis> window. Once the <emphasis role="strong">Begin Installation</emphasis> button is clicked, you cannot return to the Installation Summary window to verify your registration.</simpara>
+-</warning>
+-<itemizedlist>
+-<title>Prerequisite</title>
+-<listitem>
+-<simpara>You have completed the registration process as documented in the <link linkend="register-and-install-from-cdn-using-gui_register-and-install-from-cdn">Register and install from CDN using GUI</link> and <emphasis>Registered</emphasis> is displayed under <emphasis role="strong">Connect to Red Hat</emphasis> on the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
+-</listitem>
+-</itemizedlist>
+-<orderedlist numeration="arabic">
+-<title>Procedure</title>
+-<listitem>
+-<simpara>From the <emphasis role="strong">Installation Summary</emphasis> window, select <emphasis role="strong">Connect to Red Hat</emphasis>.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>The window opens and displays a registration summary:</simpara>
+-<variablelist>
+-<varlistentry>
+-<term>Method</term>
+-<listitem>
+-<simpara>The registered account name or activation keys are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>System Purpose</term>
+-<listitem>
+-<simpara>If set, the role, SLA, and usage details are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>Insights</term>
+-<listitem>
+-<simpara>If enabled, the Insights details are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>Number of subscriptions</term>
+-<listitem>
+-<simpara>The number of subscriptions attached are displayed. Note: In the simple content access mode, no subscription being listed is a valid behavior.</simpara>
+-</listitem>
+-</varlistentry>
+-</variablelist>
+-</listitem>
+-<listitem>
+-<simpara>Verify that the registration summary matches the details that were entered.</simpara>
+-</listitem>
+-</orderedlist>
+-<itemizedlist role="_additional-resources">
+-<title>Additional resources</title>
+-<listitem>
+-<simpara><link xl:href="https://access.redhat.com/articles/simple-content-access">Simple Content Access</link></simpara>
+-</listitem>
+-</itemizedlist>
+-</section>
+-<section xml:id="unregistering-your-system-from-cdn-using-gui_connect-to-red-hat">
+-<title>Unregistering your system from the CDN</title>
+-<simpara role="_abstract">Use this procedure to unregister your system from the CDN using the GUI.</simpara>
+-<warning>
+-<itemizedlist>
+-<listitem>
+-<simpara>You can unregister from the CDN if you have <emphasis role="strong">not</emphasis> clicked the <guibutton>Begin Installation</guibutton> button from the <emphasis role="strong">Installation Summary</emphasis> window. Once the <guibutton>Begin Installation</guibutton> button is clicked, you cannot return to the Installation Summary window to unregister your registration.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>When unregistering, the installation program switches to the first available repository, in the following order:</simpara>
+-<orderedlist numeration="loweralpha">
+-<listitem>
+-<simpara>The URL used in the inst.repo=&lt;URL&gt; boot parameter on the kernel command line.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>An automatically detected repository on the installation media (USB or DVD).</simpara>
+-</listitem>
+-</orderedlist>
+-</listitem>
+-</itemizedlist>
+-</warning>
+-<itemizedlist>
+-<title>Prerequisite</title>
+-<listitem>
+-<simpara>You have completed the registration process as documented in the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#register-and-install-from-cdn-using-gui_register-and-install-from-cdn">Registering and installing RHEL from the CDN</link> and <emphasis>Registered</emphasis> is displayed under <emphasis role="strong">Connect to Red Hat</emphasis> on the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
+-</listitem>
+-</itemizedlist>
+-<orderedlist numeration="arabic">
+-<title>Procedure</title>
+-<listitem>
+-<simpara>From the <emphasis role="strong">Installation Summary</emphasis> window, select <emphasis role="strong">Connect to Red Hat</emphasis>.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>The <emphasis role="strong">Connect to Red Hat</emphasis> window opens and displays a registration summary:</simpara>
+-<variablelist>
+-<varlistentry>
+-<term>Method</term>
+-<listitem>
+-<simpara>The registered account name or activation keys used are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>System Purpose</term>
+-<listitem>
+-<simpara>If set, the role, SLA, and usage details are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>Insights</term>
+-<listitem>
+-<simpara>If enabled, the Insights details are displayed.</simpara>
+-</listitem>
+-</varlistentry>
+-<varlistentry>
+-<term>Number of subscriptions</term>
+-<listitem>
+-<simpara>The number of subscriptions attached are displayed. Note: In the simple content access mode, no subscription being listed is a valid behavior.</simpara>
+-</listitem>
+-</varlistentry>
+-</variablelist>
+-</listitem>
+-<listitem>
+-<simpara>Click <guibutton>Unregister</guibutton> to remove the registration from the CDN. The original registration details are displayed with a <emphasis role="strong">Not registered</emphasis> message displayed in the lower-middle part of the window.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>Click <guibutton>Done</guibutton> to return to the <emphasis role="strong">Installation Summary</emphasis> window.</simpara>
+-</listitem>
+-<listitem>
+-<simpara><emphasis role="strong">Connect to Red Hat</emphasis> displays a <emphasis>Not registered</emphasis> message, and <emphasis role="strong">Software Selection</emphasis> displays a <emphasis>Red Hat CDN requires registration</emphasis> message.</simpara>
+-</listitem>
+-</orderedlist>
+-<note>
+-<simpara>After unregistering, it is possible to register your system again. Click <emphasis role="strong">Connect to Red Hat</emphasis>. The previously entered details are populated. Edit the original details, or update the fields based on the account, purpose, and connection. Click <guibutton>Register</guibutton> to complete.</simpara>
+-</note>
+-</section>
+-<section xml:id="related-information-connect-to-red-hat" role="_additional-resources">
+-<title>Additional resources</title>
+-<itemizedlist>
+-<listitem>
+-<simpara>For information about Red Hat Insights, see the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_insights/"><emphasis>Red Hat Insights product documentation</emphasis></link>.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>For information about Activation Keys, see the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/using_red_hat_subscription_management/activation_keys_con"><emphasis>Understanding Activation Keys</emphasis></link> chapter of the <emphasis>Using Red Hat Subscription Management</emphasis> document.</simpara>
+-</listitem>
+-<listitem>
+-<simpara>For information about how to set up an HTTP proxy for Subscription Manager, see the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html-single/rhsm/index#repos-proxy"><emphasis>Using an HTTP proxy</emphasis></link> chapter of the <emphasis>Using and Configuring Red Hat Subscription Manager</emphasis> document.</simpara>
+-</listitem>
+-</itemizedlist>
+-</section>
+-</section>
+ <section xml:id="security-policy_configuring-system-settings">
+ <title>Installing System Aligned with a Security Policy</title>
+-<simpara>This section contains information about applying Red&#160;Hat Enterprise&#160;Linux 8 security policy during installation and how to configure it for use on your system before the first boot.</simpara>
++<simpara>This section contains information about applying OpenELA&#160;Linux 8 security policy during installation and how to configure it for use on your system before the first boot.</simpara>
+ <section xml:id="about-security-policy_security-policy">
+ <title>About security policy</title>
+-<simpara role="_abstract">The Red&#160;Hat Enterprise&#160;Linux includes OpenSCAP suite to enable automated configuration of the system in alignment with a particular security policy. The policy is implemented using the Security Content Automation Protocol (SCAP) standard. The packages are available in the AppStream repository. However, by default, the installation and post-installation process does not enforce any policies and therefore does not involve any checks unless specifically configured.</simpara>
++<simpara role="_abstract">The OpenELA&#160;Linux includes OpenSCAP suite to enable automated configuration of the system in alignment with a particular security policy. The policy is implemented using the Security Content Automation Protocol (SCAP) standard. The packages are available in the AppStream repository. However, by default, the installation and post-installation process does not enforce any policies and therefore does not involve any checks unless specifically configured.</simpara>
+ <simpara>Applying a security policy is not a mandatory feature of the installation program. If you apply a security policy to the system, it is installed using restrictions and recommendations defined in the profile that you selected. The <literal role="package">openscap-scanner</literal> and <literal role="package">scap-security-guide</literal> packages are added to your package selection, providing a preinstalled tool for compliance and vulnerability scanning.</simpara>
+ <simpara>When you select a security policy, the Anaconda GUI installer requires the configuration to adhere to the policy&#8217;s requirements. There might be conflicting package selections, as well as separate partitions defined. Only after all the requirements are met, you can start the installation.</simpara>
+ <simpara>At the end of the installation process, the selected OPenSCAP security policy automatically hardens the system and scans it to verify compliance, saving the scan results to the <literal>/root/openscap_data</literal> directory on the installed system.</simpara>
+@@ -1019,7 +666,7 @@ A separate window opens allowing you to enter a URL for valid security content.<
+ <simpara><literal role="literal">scap-security-guide(8)</literal> - The manual page for the <literal role="literal">scap-security-guide</literal> project contains information about SCAP security profiles, including examples on how to utilize the provided benchmarks using the OpenSCAP utility.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>Red&#160;Hat Enterprise&#160;Linux security compliance information is available in the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/security_hardening/index/"><emphasis>Security hardening</emphasis></link> document.</simpara>
++<simpara>OpenELA&#160;Linux security compliance information is available in the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/security_hardening/index/"><emphasis>Security hardening</emphasis></link> document.</simpara>
+ </listitem>
+ </itemizedlist>
+ </section>
+@@ -1030,17 +677,17 @@ A separate window opens allowing you to enter a URL for valid security content.<
+ <simpara>This section contains information about configuring your installation source and software selection settings, and activating a repository.</simpara>
+ <section xml:id="configuring-installation-source_configuring-software-settings">
+ <title>Configuring installation source</title>
+-<simpara role="_abstract">Complete the steps in this procedure to configure an installation source from either auto-detected installation media, Red Hat CDN, or the network.</simpara>
++<simpara role="_abstract">Complete the steps in this procedure to configure an installation source from either auto-detected installation media, a CDN, or the network.</simpara>
+ <note>
+-<simpara>When the <emphasis role="strong">Installation Summary</emphasis> window first opens, the installation program attempts to configure an installation source based on the type of media that was used to boot the system. The full Red&#160;Hat Enterprise&#160;Linux Server DVD configures the source as local media.</simpara>
++<simpara>When the <emphasis role="strong">Installation Summary</emphasis> window first opens, the installation program attempts to configure an installation source based on the type of media that was used to boot the system. The full OpenELA&#160;Linux Server DVD configures the source as local media.</simpara>
+ </note>
+ <itemizedlist>
+ <title>Prerequisites</title>
+ <listitem>
+-<simpara>You have downloaded the full installation image. <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#downloading-beta-installation-images_installing-RHEL">Downloading a RHEL installation ISO image</link></simpara>
++<simpara>You have downloaded the <link xl:href="https://openela.org/download">installation image</link> and have created installation media.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>You have created a bootable physical media. <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#making-an-installation-cd-or-dvd_assembly_creating-a-bootable-installation-medium">Creating a bootable CD or DVD</link></simpara>
++<simpara>You have created a bootable physical media. <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#making-an-installation-cd-or-dvd_assembly_creating-a-bootable-installation-medium">Creating a bootable CD or DVD (Red Hat link)</link></simpara>
+ </listitem>
+ <listitem>
+ <simpara>The <emphasis role="strong">Installation Summary</emphasis> window is open.</simpara>
+@@ -1065,7 +712,7 @@ A separate window opens allowing you to enter a URL for valid security content.<
+ <simpara><emphasis role="strong">No additional configuration is necessary as the BaseOS and AppStream repositories are installed as part of the full installation image.</emphasis></simpara>
+ </listitem>
+ <listitem>
+-<simpara><emphasis role="strong">Do not disable the AppStream repository check box if you want a full Red&#160;Hat Enterprise&#160;Linux 8 installation.</emphasis></simpara>
++<simpara><emphasis role="strong">Do not disable the AppStream repository check box if you want a full OpenELA&#160;Linux 8 installation.</emphasis></simpara>
+ </listitem>
+ </itemizedlist>
+ </important>
+@@ -1073,9 +720,6 @@ A separate window opens allowing you to enter a URL for valid security content.<
+ </orderedlist>
+ </listitem>
+ <listitem>
+-<simpara>Optional: Select the <emphasis role="strong">Red Hat CDN</emphasis> option to register your system, attach RHEL subscriptions, and install RHEL from the Red Hat Content Delivery Network (CDN). For more information, see the <emphasis>Registering and installing RHEL from the CDN</emphasis> section.</simpara>
+-</listitem>
+-<listitem>
+ <simpara>Optional: Select the <emphasis role="strong">On the network</emphasis> option to download and install packages from a network location instead of local media.</simpara>
+ <note>
+ <itemizedlist>
+@@ -1153,7 +797,7 @@ A separate window opens allowing you to enter a URL for valid security content.<
+ </listitem>
+ </itemizedlist>
+ <simpara>Use a predefined environment and additional software to customize your system. However, in a standard installation, you cannot select individual packages to install. To view the packages contained in a specific environment, see the <literal role="filename"><emphasis>repository</emphasis>/repodata/*-comps-<emphasis>repository</emphasis>.<emphasis>architecture</emphasis>.xml</literal> file on your installation source media (DVD, CD, USB). The XML file contains details of the packages installed as part of a base environment. Available environments are marked by the <literal>&lt;environment&gt;</literal> tag, and additional software packages are marked by the <literal>&lt;group&gt;</literal> tag.</simpara>
+-<simpara>If you are unsure about which packages to install, Red Hat recommends that you select the <emphasis role="strong">Minimal Install</emphasis> base environment. Minimal install installs a basic version of Red&#160;Hat Enterprise&#160;Linux with only a minimal amount of additional software. After the system finishes installing and you log in for the first time, you can use the <emphasis role="strong">YUM package manager</emphasis> to install additional software.
++<simpara>If you are unsure about which packages to install, OpenELA recommends that you select the <emphasis role="strong">Minimal Install</emphasis> base environment. Minimal install installs a basic version of OpenELA&#160;Linux with only a minimal amount of additional software. After the system finishes installing and you log in for the first time, you can use the <emphasis role="strong">YUM package manager</emphasis> to install additional software.
+ For more information about YUM package manager, see the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/configuring_basic_system_settings/index/"><emphasis>Configuring basic system settings</emphasis></link> document.</simpara>
+ <note>
+ <itemizedlist>
+@@ -1161,7 +805,7 @@ For more information about YUM package manager, see the <link xl:href="https://a
+ <simpara>The <literal>yum group list</literal> command lists all package groups from yum repositories. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/configuring_basic_system_settings/index/"><emphasis>Configuring basic system settings</emphasis></link> document for more information.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>If you need to control which packages are installed, you can use a Kickstart file and define the packages in the <literal>%packages</literal> section. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced RHEL 8 installation</emphasis></link> document for information about installing Red&#160;Hat Enterprise&#160;Linux using Kickstart.</simpara>
++<simpara>If you need to control which packages are installed, you can use a Kickstart file and define the packages in the <literal>%packages</literal> section. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced OpenELA 8 installation</emphasis></link> document for information about installing OpenELA&#160;Linux using Kickstart.</simpara>
+ </listitem>
+ </itemizedlist>
+ </note>
+@@ -1199,7 +843,7 @@ For more information about YUM package manager, see the <link xl:href="https://a
+ </chapter>
+ <chapter xml:id="storage-devices_graphical-installation">
+ <title>Configuring storage devices</title>
+-<simpara>You can install Red&#160;Hat Enterprise&#160;Linux on a large variety of storage devices. You can configure basic, locally accessible, storage devices in the <emphasis role="strong">Installation Destination</emphasis> window. Basic storage devices directly connected to the local system, such as hard disk drives and solid-state drives, are displayed in the <emphasis role="strong">Local Standard Disks</emphasis> section of the window.
++<simpara>You can install OpenELA&#160;Linux on a large variety of storage devices. You can configure basic, locally accessible, storage devices in the <emphasis role="strong">Installation Destination</emphasis> window. Basic storage devices directly connected to the local system, such as hard disk drives and solid-state drives, are displayed in the <emphasis role="strong">Local Standard Disks</emphasis> section of the window.
+ On 64-bit IBM Z, this section contains activated Direct Access Storage Devices (DASDs).</simpara>
+ <warning>
+ <simpara>A known issue prevents DASDs configured as HyperPAV aliases from being automatically attached to the system after the installation is complete. These storage devices are available during the installation, but are not immediately accessible after you finish installing and reboot. To attach HyperPAV alias devices, add them manually to the <literal>/etc/dasd.conf</literal> configuration file of the system.</simpara>
+@@ -1233,7 +877,7 @@ The devices are grouped under the following tabs:</simpara>
+ <varlistentry>
+ <term>NVDIMM Devices</term>
+ <listitem>
+-<simpara>Under specific circumstances, Red&#160;Hat Enterprise&#160;Linux 8 can boot and run from (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures.</simpara>
++<simpara>Under specific circumstances, OpenELA&#160;Linux 8 can boot and run from (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures.</simpara>
+ </listitem>
+ </varlistentry>
+ <varlistentry>
+@@ -1271,7 +915,7 @@ The devices are grouped under the following tabs:</simpara>
+ </listitem>
+ <listitem>
+ <simpara>Select the check box to enable the device that you require during the installation process.</simpara>
+-<simpara>Later in the installation process you can choose to install Red&#160;Hat Enterprise&#160;Linux on any of the selected devices, and you can choose to mount any of the other selected devices as part of the installed system automatically.</simpara>
++<simpara>Later in the installation process you can choose to install OpenELA&#160;Linux on any of the selected devices, and you can choose to mount any of the other selected devices as part of the installed system automatically.</simpara>
+ <note>
+ <itemizedlist>
+ <listitem>
+@@ -1496,7 +1140,7 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ <simpara>Type the 4 digit hexadecimal device number in the <emphasis role="strong">Device number</emphasis> field.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>When installing RHEL-8.6 or older releases or if the <literal>zFCP</literal> device is not configured in NPIV mode, or when <literal>auto LUN</literal> scanning is disabled by the <literal>zfcp.allow_lun_scan=0</literal> kernel module parameter, provide the following values:</simpara>
++<simpara>When installing OpenELA 8.6 or older releases or if the <literal>zFCP</literal> device is not configured in NPIV mode, or when <literal>auto LUN</literal> scanning is disabled by the <literal>zfcp.allow_lun_scan=0</literal> kernel module parameter, provide the following values:</simpara>
+ <orderedlist numeration="loweralpha">
+ <listitem>
+ <simpara>Type the 16 digit hexadecimal World Wide Port Number (WWPN) in the <emphasis role="strong">WWPN</emphasis> field.</simpara>
+@@ -1528,10 +1172,10 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ </section>
+ <section xml:id="installing-to-a-nvdimm-device_storage-devices">
+ <title>Installing to an NVDIMM device</title>
+-<simpara>Non-Volatile Dual In-line Memory Module (NVDIMM) devices combine the performance of RAM with disk-like data persistence when no power is supplied. Under specific circumstances, Red&#160;Hat Enterprise&#160;Linux 8 can boot and run from NVDIMM devices.</simpara>
++<simpara>Non-Volatile Dual In-line Memory Module (NVDIMM) devices combine the performance of RAM with disk-like data persistence when no power is supplied. Under specific circumstances, OpenELA&#160;Linux 8 can boot and run from NVDIMM devices.</simpara>
+ <section xml:id="criteria-for-using-an-nvdimm-device-as-an-installation-target_installing-to-a-nvdimm-device">
+ <title>Criteria for using an NVDIMM device as an installation target</title>
+-<simpara role="_abstract">You can install Red&#160;Hat Enterprise&#160;Linux 8 to Non-Volatile Dual In-line Memory Module (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures, supported by the <emphasis role="strong">nd_pmem</emphasis> driver.</simpara>
++<simpara role="_abstract">You can install OpenELA&#160;Linux 8 to Non-Volatile Dual In-line Memory Module (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures, supported by the <emphasis role="strong">nd_pmem</emphasis> driver.</simpara>
+ <formalpara>
+ <title>Conditions for using an NVDIMM device as storage</title>
+ <para>To use an NVDIMM device as storage, the following conditions must be satisfied:</para>
+@@ -1569,7 +1213,7 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ </section>
+ <section xml:id="configuring-an-nvdimm-device-using-anaconda_installing-to-a-nvdimm-device">
+ <title>Configuring an NVDIMM device using the graphical installation mode</title>
+-<simpara role="_abstract">A Non-Volatile Dual In-line Memory Module (NVDIMM) device must be properly configured for use by Red&#160;Hat Enterprise&#160;Linux 8 using the graphical installation.</simpara>
++<simpara role="_abstract">A Non-Volatile Dual In-line Memory Module (NVDIMM) device must be properly configured for use by OpenELA&#160;Linux 8 using the graphical installation.</simpara>
+ <warning>
+ <simpara>Reconfiguration of a NVDIMM device process destroys any data stored on the device.</simpara>
+ </warning>
+@@ -1624,11 +1268,11 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ </chapter>
+ <chapter xml:id="manual-partitioning_graphical-installation">
+ <title>Configuring manual partitioning</title>
+-<simpara>You can use manual partitioning to configure your disk partitions and mount points and define the file system that Red&#160;Hat Enterprise&#160;Linux is installed on.</simpara>
++<simpara>You can use manual partitioning to configure your disk partitions and mount points and define the file system that OpenELA&#160;Linux is installed on.</simpara>
+ <note>
+ <simpara>Before installation, you should consider whether you want to use partitioned or unpartitioned disk devices. For more information on the advantages and disadvantages to using partitioning on LUNs, either directly or with LVM, see the article at <link xl:href="https://access.redhat.com/solutions/163853">https://access.redhat.com/solutions/163853</link>.</simpara>
+ </note>
+-<simpara>An installation of Red&#160;Hat Enterprise&#160;Linux requires a minimum of one partition but Red&#160;Hat recommends using at least the following partitions or volumes: <literal>/</literal>, <literal>/home</literal>, <literal>/boot</literal>, and <literal>swap</literal>. You can also create additional partitions and volumes as you require.</simpara>
++<simpara>An installation of OpenELA&#160;Linux requires a minimum of one partition but OpenELA&#160;Linux recommends using at least the following partitions or volumes: <literal>/</literal>, <literal>/home</literal>, <literal>/boot</literal>, and <literal>swap</literal>. You can also create additional partitions and volumes as you require.</simpara>
+ <warning>
+ <simpara>To prevent data loss it is recommended that you back up your data before proceeding. If you are upgrading or creating a dual-boot system, you should back up any data you want to keep on your storage devices.</simpara>
+ </warning>
+@@ -1691,7 +1335,7 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ <simpara>The dialog has a check box that you can use to remove all other partitions used by the system to which the deleted partition belongs.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>If there are no existing partitions and you want to create the recommended set of partitions as a starting point, select your preferred partitioning scheme from the left pane (default for Red&#160;Hat Enterprise&#160;Linux is LVM) and click the <emphasis role="strong">Click here to create them automatically</emphasis> link.</simpara>
++<simpara>If there are no existing partitions and you want to create the recommended set of partitions as a starting point, select your preferred partitioning scheme from the left pane (default for OpenELA&#160;Linux is LVM) and click the <emphasis role="strong">Click here to create them automatically</emphasis> link.</simpara>
+ <simpara>A <literal>/boot</literal> partition, a <literal>/</literal> (root) volume, and a <literal>swap</literal> volume proportionate to the size of the available storage are created and listed in the left pane. These are the recommended file systems for a typical installation, but you can add additional file systems and mount points.</simpara>
+ </listitem>
+ </itemizedlist>
+@@ -1746,7 +1390,7 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ <note>
+ <itemizedlist>
+ <listitem>
+-<simpara>Btfrs support has been removed in Red&#160;Hat Enterprise&#160;Linux 8.</simpara>
++<simpara>Btfrs support has been removed in OpenELA&#160;Linux 8.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>The <literal>/boot</literal> partition is always located on a standard partition, regardless of the value selected.</simpara>
+@@ -1848,23 +1492,23 @@ If discovery succeeds, the <literal>Add iSCSI Storage Target</literal> window di
+ </section>
+ <section xml:id="preserving-the-home-directory_manual-partitioning">
+ <title>Preserving the /home directory</title>
+-<simpara role="_abstract">In a Red&#160;Hat Enterprise&#160;Linux 8 graphical installation, you can preserve the <literal role="filename">/home</literal> directory that was used on your RHEL 7 system.</simpara>
++<simpara role="_abstract">In a OpenELA&#160;Linux 8 graphical installation, you can preserve the <literal role="filename">/home</literal> directory that was used on your RHEL or CentOS 7 system.</simpara>
+ <warning>
+-<simpara>Preserving <literal role="filename">/home</literal> is only possible if the <literal role="filename">/home</literal> directory is located on a separate <literal>/home</literal> partition on your RHEL 7 system.</simpara>
++<simpara>Preserving <literal role="filename">/home</literal> is only possible if the <literal role="filename">/home</literal> directory is located on a separate <literal>/home</literal> partition on your RHEL or CentOS 7 system.</simpara>
+ </warning>
+-<simpara>Preserving the <literal role="filename">/home</literal> directory that includes various configuration settings, makes it possible that the GNOME Shell environment on the new Red&#160;Hat Enterprise&#160;Linux 8 system is set in the same way as it was on your RHEL 7 system.
+-Note that this applies only for users on Red&#160;Hat Enterprise&#160;Linux 8 with the same user name and ID as on the previous RHEL 7 system.</simpara>
+-<simpara>Complete this procedure to preserve the <literal role="filename">/home</literal> directory from your RHEL 7 system.</simpara>
++<simpara>Preserving the <literal role="filename">/home</literal> directory that includes various configuration settings, makes it possible that the GNOME Shell environment on the new OpenELA&#160;Linux 8 system is set in the same way as it was on your RHEL or CentOS 7 system.
++Note that this applies only for users on OpenELA&#160;Linux 8 with the same user name and ID as on the previous RHEL or CentOS 7 system.</simpara>
++<simpara>Complete this procedure to preserve the <literal role="filename">/home</literal> directory from your RHEL or CentOS 7 system.</simpara>
+ <itemizedlist>
+ <title>Prerequisites</title>
+ <listitem>
+-<simpara>RHEL 7 system is installed on your computer.</simpara>
++<simpara>RHEL or CentOS 7 system is installed on your computer.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>The <literal role="filename">/home</literal> directory is located on a separate <literal>/home</literal> partition on your RHEL 7 system.</simpara>
++<simpara>The <literal role="filename">/home</literal> directory is located on a separate <literal>/home</literal> partition on your RHEL or CentOS 7 system.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>The Red&#160;Hat Enterprise&#160;Linux 8 <literal>Installation Summary</literal> window is currently displayed.</simpara>
++<simpara>The OpenELA&#160;Linux 8 <literal>Installation Summary</literal> window is currently displayed.</simpara>
+ </listitem>
+ </itemizedlist>
+ <orderedlist numeration="arabic">
+@@ -1882,7 +1526,7 @@ Note that this applies only for users on Red&#160;Hat Enterprise&#160;Linux 8 wi
+ <simpara>Choose the <literal>/home</literal> partition, fill in <literal>/home</literal> under <literal>Mount Point:</literal> and clear the <emphasis role="strong">Reformat</emphasis> check box.</simpara>
+ </listitem>
+ <listitem>
+-<simpara>Optional: You can also customize various aspects of the <literal>/home</literal> partition required for your Red&#160;Hat Enterprise&#160;Linux 8 system as described in <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#customizing-a-partition-or-volume_manual-partitioning">Customizing a mount point file system</link>. However, to preserve <literal>/home</literal> from your RHEL 7 system, it is necessary to clear the <emphasis role="strong">Reformat</emphasis> check box.</simpara>
++<simpara>Optional: You can also customize various aspects of the <literal>/home</literal> partition required for your OpenELA&#160;Linux 8 system as described in <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_a_standard_rhel_8_installation/index#customizing-a-partition-or-volume_manual-partitioning">Customizing a mount point file system</link>. However, to preserve <literal>/home</literal> from your RHEL or CentOS 7 system, it is necessary to clear the <emphasis role="strong">Reformat</emphasis> check box.</simpara>
+ </listitem>
+ <listitem>
+ <simpara>After you customized all partitions according to your requirements, click <guibutton>Done</guibutton>. The <emphasis role="strong">Summary of changes</emphasis> dialog box opens.</simpara>
+@@ -1965,7 +1609,7 @@ Note that this applies only for users on Red&#160;Hat Enterprise&#160;Linux 8 wi
+ <listitem>
+ <simpara>Click the <emphasis role="strong">Device Type</emphasis> drop-down menu and select <literal>LVM</literal>. The <emphasis role="strong">Volume Group</emphasis> drop-down menu is displayed with the newly-created volume group name.</simpara>
+ <note>
+-<simpara>You cannot specify the size of the volume group&#8217;s physical extents in the configuration dialog. The size is always set to the default value of 4 MiB. If you want to create a volume group with different physical extents, you must create it manually by switching to an interactive shell and using the <literal role="command">vgcreate</literal> command, or use a Kickstart file with the <literal role="command">volgroup --pesize=<emphasis>size</emphasis></literal> command. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced RHEL 8 installation</emphasis></link> document for more information about Kickstart.</simpara>
++<simpara>You cannot specify the size of the volume group&#8217;s physical extents in the configuration dialog. The size is always set to the default value of 4 MiB. If you want to create a volume group with different physical extents, you must create it manually by switching to an interactive shell and using the <literal role="command">vgcreate</literal> command, or use a Kickstart file with the <literal role="command">volgroup --pesize=<emphasis>size</emphasis></literal> command. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced OpenELA 8 installation</emphasis></link> document for more information about Kickstart.</simpara>
+ </note>
+ </listitem>
+ </orderedlist>
+@@ -1994,7 +1638,7 @@ Note that this applies only for users on Red&#160;Hat Enterprise&#160;Linux 8 wi
+ <simpara>Click <guibutton>Modify</guibutton> to configure the newly-created volume group.</simpara>
+ <simpara>The <emphasis role="strong">Configure Volume Group</emphasis> dialog box opens.</simpara>
+ <note>
+-<simpara>You cannot specify the size of the volume group&#8217;s physical extents in the configuration dialog. The size is always set to the default value of 4 MiB. If you want to create a volume group with different physical extents, you must create it manually by switching to an interactive shell and using the <literal role="command">vgcreate</literal> command, or use a Kickstart file with the <literal role="command">volgroup --pesize=<emphasis>size</emphasis></literal> command. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced RHEL 8 installation</emphasis></link> document for more information about Kickstart.</simpara>
++<simpara>You cannot specify the size of the volume group&#8217;s physical extents in the configuration dialog. The size is always set to the default value of 4 MiB. If you want to create a volume group with different physical extents, you must create it manually by switching to an interactive shell and using the <literal role="command">vgcreate</literal> command, or use a Kickstart file with the <literal role="command">volgroup --pesize=<emphasis>size</emphasis></literal> command. See the <link xl:href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index/"><emphasis>Performing an advanced OpenELA 8 installation</emphasis></link> document for more information about Kickstart.</simpara>
+ </note>
+ </listitem>
+ <listitem>
+@@ -2175,4 +1819,4 @@ Note that this applies only for users on Red&#160;Hat Enterprise&#160;Linux 8 wi
+ </listitem>
+ </orderedlist>
+ </chapter>
+-</book>
+\ No newline at end of file
++</book>
+diff --git a/rhel/en-US/rhel_help_placeholder.txt b/openela/en-US/rhel_help_placeholder.txt
+similarity index 78%
+rename from rhel/en-US/rhel_help_placeholder.txt
+rename to openela/en-US/rhel_help_placeholder.txt
+index 5c5bd51..85590fa 100644
+--- a/rhel/en-US/rhel_help_placeholder.txt
++++ b/openela/en-US/rhel_help_placeholder.txt
+@@ -1 +1 @@
+-Help content for this screen is not yet available. See the installation instructions available online at https://access.redhat.com.
++Help content for this screen is not yet available. See the installation instructions available online at https://access.redhat.com and https://docs.openela.org.
+diff --git a/rhel/en-US/rhel_help_placeholder.xml b/openela/en-US/rhel_help_placeholder.xml
+similarity index 58%
+rename from rhel/en-US/rhel_help_placeholder.xml
+rename to openela/en-US/rhel_help_placeholder.xml
+index 9574ecd..681adcb 100644
+--- a/rhel/en-US/rhel_help_placeholder.xml
++++ b/openela/en-US/rhel_help_placeholder.xml
+@@ -1 +1 @@
+-<section><para><emphasis role="bold">Help content for this screen is not yet available. See the installation instructions available online at <ulink url="https://access.redhat.com/">https://access.redhat.com/</ulink>.</emphasis></para></section>
++<section><para><emphasis role="bold">Help content for this screen is not yet available. See the installation instructions available online at <ulink url="https://access.redhat.com/">https://access.redhat.com/</ulink> and <ulink url="https://docs.openela.org/">https://docs.openela.org/</ulink>.</emphasis></para></section>
+-- 
+2.39.2
+
